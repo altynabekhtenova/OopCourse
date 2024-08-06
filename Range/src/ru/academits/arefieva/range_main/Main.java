@@ -2,33 +2,20 @@ package ru.academits.arefieva.range_main;
 
 import ru.academits.arefieva.range.Range;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        Range range = new Range(3, 7);
-        System.out.printf("Диапазон от %f до %f%n", range.getFrom(), range.getTo());
-        System.out.println("Длина диапазона = " + range.getLength());
-        System.out.println("Заданное число (7) попадает в указанный диапазон - " + range.isInside(7));
-        System.out.println();
+        Range range1 = new Range(7, 9);
+        Range range2 = new Range(6, 22);
+        System.out.println("Интервал пересечения двух интервалов = " + Arrays.toString(range1.getIntersection(range2)));
 
-        range.setFrom(10);
-        range.setTo(15);
-        System.out.printf("Диапазон от %f до %f%n", range.getFrom(), range.getTo());
-        System.out.println("Длина диапазона = " + range.getLength());
-        System.out.println("Заданное число (25) попадает в указанный диапазон - " + range.isInside(25));
-        System.out.println();
+        Range range3 = new Range(1, 9);
+        Range range4 = new Range(11, 22);
+        System.out.println("Интервал объединения двух интервалов = " + Arrays.toString(range3.getJoin(range4)));
 
-        range.setFrom(0);
-        range.setTo(0);
-        System.out.printf("Диапазон от %f до %f%n", range.getFrom(), range.getTo());
-        System.out.println("Длина диапазона = " + range.getLength());
-        System.out.println("Заданное число (5.00) попадает в указанный диапазон - " + range.isInside(5));
-        System.out.println();
-
-        range.setFrom(13.56);
-        range.setTo(24.89);
-        System.out.printf("Диапазон от %f до %f%n", range.getFrom(), range.getTo());
-        System.out.println("Длина диапазона = " + range.getLength());
-        System.out.printf("Заданное число (15.44) попадает в указанный диапазон - " + range.isInside(15.44));
-        System.out.println();
+        Range range5 = new Range(1, 6);
+        Range range6 = new Range(9, 17);
+        System.out.println("Интервал объединения двух интервалов = " + Arrays.toString(range5.getDifference(range6)));
     }
 }
