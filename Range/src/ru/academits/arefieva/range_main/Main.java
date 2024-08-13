@@ -53,6 +53,5 @@ public class Main {
         System.out.println("Результат пересечения двух интервалов = " + range13.getIntersection(range14));
         System.out.println("Результат объединения двух интервалов = " + Arrays.toString(range13.getUnion(range14)));
         System.out.println("Результат разности двух интервалов = " + Arrays.toString(range13.getDifference(range14)));
-        System.out.println();
     }
 }
