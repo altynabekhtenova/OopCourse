@@ -1,11 +1,11 @@
 package ru.academits.arefieva.shapes;
 
 public interface Shapes {
-    public abstract double getWidth();
+    public double getWidth();
 
-    public abstract double getHeight();
+    public double getHeight();
 
-    public abstract double getArea();
+    public double getArea();
 
-    public abstract double getPerimeter();
+    public double getPerimeter();
 }
