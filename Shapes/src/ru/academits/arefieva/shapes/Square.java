@@ -1,6 +1,6 @@
 package ru.academits.arefieva.shapes;
 
-public class Square extends Shapes {
+public class Square implements Shapes {
     private double sideLength;
 
     public Square(double sideLength) {

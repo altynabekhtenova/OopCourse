@@ -1,6 +1,6 @@
 package ru.academits.arefieva.shapes;
 
-public class Rectangle extends Shapes {
+public class Rectangle implements Shapes {
     private double width;
     private double height;
 

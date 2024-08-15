@@ -1,6 +1,6 @@
 package ru.academits.arefieva.shapes;
 
-public class Triangle extends Shapes {
+public class Triangle implements Shapes {
     private double x1;
     private double y1;
     private double x2;

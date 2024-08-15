@@ -1,6 +1,6 @@
 package ru.academits.arefieva.shapes;
 
-public class Circle extends Shapes {
+public class Circle implements Shapes {
     private double radius;
 
     public Circle(double radius) {
