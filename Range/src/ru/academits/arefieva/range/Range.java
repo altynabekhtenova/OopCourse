@@ -1,5 +1,7 @@
 package ru.academits.arefieva.range;
 
+import java.util.Arrays;
+
 public class Range {
     private double from;
     private double to;
@@ -57,10 +59,10 @@ public class Range {
     public Range[] getDifference(Range range) {
         Range[] differenceResult;
 
-        if (to < range.from || from > range.to) {
+        if (from > range.from && to < range.to) {
             differenceResult = new Range[]{};
         } else if (from > range.from && to > range.to) {
-            differenceResult = new Range[]{new Range(range.to, to)};
+            differenceResult = new Range[]{new Range(Math.max(from, range.to), to)};
         } else if (from < range.from && to > range.to) {
             differenceResult = new Range[]{new Range(from, range.from), new Range(range.to, to)};
         } else {
@@ -68,6 +70,21 @@ public class Range {
         }
 
         return differenceResult;
+    }
+
+    public void printIntersection(Range range) {
+        System.out.printf("Результат пересечения интервалов (%.1f; %.1f) и (%.0f; %.0f) = %s%n",
+                from, to, range.getFrom(), range.getTo(), getIntersection(range));
+    }
+
+    public void printUnion(Range range) {
+        System.out.printf("Результат объединения интервалов (%.1f; %.1f) и (%.1f; %.1f) = %s%n",
+                from, to, range.getFrom(), range.getTo(), Arrays.toString(getUnion(range)));
+    }
+
+    public void printDifference(Range range) {
+        System.out.printf("Результат разности двух интервалов (%.1f; %.1f) и (%.1f; %.1f) = %s%n%n",
+                from, to, range.getFrom(), range.getTo(), Arrays.toString(getDifference(range)));
     }
 
     @Override
