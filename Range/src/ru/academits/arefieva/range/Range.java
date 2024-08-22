@@ -73,7 +73,7 @@ public class Range {
     }
 
     public void printIntersection(Range range) {
-        System.out.printf("Результат пересечения интервалов (%.1f; %.1f) и (%.0f; %.0f) = %s%n",
+        System.out.printf("Результат пересечения интервалов (%.1f; %.1f) и (%.1f; %.1f) = %s%n",
                 from, to, range.getFrom(), range.getTo(), getIntersection(range));
     }
 
