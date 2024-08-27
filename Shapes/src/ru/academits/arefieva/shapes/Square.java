@@ -1,6 +1,6 @@
 package ru.academits.arefieva.shapes;
 
-public class Square implements Shapes {
+public class Square implements Shape {
     private double sideLength;
 
     public Square(double sideLength) {
@@ -28,23 +28,32 @@ public class Square implements Shapes {
     }
 
     public double getPerimeter() {
-        return sideLength + sideLength + sideLength + sideLength;
+        return 4 * sideLength;
     }
 
     @Override
     public String toString() {
-        return "Квадрат с длиной стороны: " + sideLength;
+        return "Квадрат с длиной стороны: " + getWidth();
     }
 
     @Override
     public int hashCode() {
-        return Double.hashCode(sideLength);
+        final int prime = 37;
+        int hash = 1;
+        hash = prime * hash + Double.hashCode(sideLength);
+
+        return hash;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (o == this) return true;
-        if (o == null || o.getClass() != getClass()) return false;
+        if (o == this) {
+            return true;
+        }
+
+        if (o == null || o.getClass() != getClass()) {
+            return false;
+        }
 
         Square s = (Square) o;
         return sideLength == s.sideLength;
