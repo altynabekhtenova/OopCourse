@@ -15,25 +15,29 @@ public class Square implements Shape {
         this.sideLength = sideLength;
     }
 
+    @Override
     public double getWidth() {
         return sideLength;
     }
 
+    @Override
     public double getHeight() {
         return sideLength;
     }
 
+    @Override
     public double getArea() {
         return sideLength * sideLength;
     }
 
+    @Override
     public double getPerimeter() {
         return 4 * sideLength;
     }
 
     @Override
     public String toString() {
-        return "Квадрат с длиной стороны: " + getWidth();
+        return "Квадрат";
     }
 
     @Override
