@@ -20,7 +20,7 @@ public class Vector {
             this.vector = vector;
             this.n = n;
         }
-    } //– размерность n, все компоненты равны 0
+    }
 
     public Vector(Vector vector) {
         this.n = vector.n;
