@@ -147,7 +147,7 @@ public class Vector {
         return resultVector;
     }
 
-    public static Vector getVectorsDotProduct(Vector vector1, Vector vector2) {
+    public static Vector getVectorsProduct(Vector vector1, Vector vector2) {
         Vector resultVector = new Vector(Math.max(vector1.getVector().length, vector2.getVector().length));
 
         for (int i = 0; i < resultVector.getVector().length; i++) {

@@ -19,9 +19,8 @@ public class Main {
         System.out.println("Длина вектора - " + vector1.getVectorLength());
         System.out.println("Компонента вектора по индексу - " + vector1.getVectorComponentByIndex(3));
         System.out.println("Вектор с новым значением по индексу - " + vector1.setVectorComponentByIndex(3.5, 3));
-
         System.out.println("Результат сложения двух векторов с созданием нового вектора - " + addTwoVectors(vector1, vector2));
         System.out.println("Результат вычитания одного вектора из другого с созданием нового вектора - " + subtractVectorFromVector(vector1, vector2));
-        System.out.println("Результат результат произведения векторов с созданием нового вектора - " + getVectorsDotProduct(vector1, vector2));
+        System.out.println("Результат результат произведения векторов с созданием нового вектора - " + getVectorsProduct(vector1, vector2));
     }
 }
