@@ -51,7 +51,6 @@ public class Vector {
 
             this.vector = newVector;
         }
-
     }
 
     public int getSize() {
