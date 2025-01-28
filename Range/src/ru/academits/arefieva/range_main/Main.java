@@ -4,65 +4,11 @@ import ru.academits.arefieva.range.Range;
 
 public class Main {
     public static void main(String[] args) {
-        Range range1 = new Range(1, 3);
-        Range range2 = new Range(6, 10);
+        Range range = new Range(-1.5, 3.7);
+        range.setTo(6.8);
+        System.out.printf("Длина диапазона %s = %.1f%n", range, range.getLength());
 
-        range1.printIntersection(range2);
-        range1.printUnion(range2);
-        range1.printDifference(range2);
-
-        range1.setFrom(6);
-        range1.setTo(10);
-        range2.setFrom(1);
-        range2.setTo(3);
-
-        range1.printIntersection(range2);
-        range1.printUnion(range2);
-        range1.printDifference(range2);
-
-        range1.setFrom(1);
-        range1.setTo(16);
-        range2.setFrom(9);
-        range2.setTo(13);
-
-        range1.printIntersection(range2);
-        range1.printUnion(range2);
-        range1.printDifference(range2);
-
-        range1.setFrom(9);
-        range1.setTo(13);
-        range2.setFrom(1);
-        range2.setTo(16);
-
-        range1.printIntersection(range2);
-        range1.printUnion(range2);
-        range1.printDifference(range2);
-
-        range1.setFrom(1);
-        range1.setTo(9);
-        range2.setFrom(6);
-        range2.setTo(15);
-
-        range1.printIntersection(range2);
-        range1.printUnion(range2);
-        range1.printDifference(range2);
-
-        range1.setFrom(6);
-        range1.setTo(15);
-        range2.setFrom(1);
-        range2.setTo(9);
-
-        range1.printIntersection(range2);
-        range1.printUnion(range2);
-        range1.printDifference(range2);
-
-        range1.setFrom(1);
-        range1.setTo(6);
-        range2.setFrom(6);
-        range2.setTo(9);
-
-        range1.printIntersection(range2);
-        range1.printUnion(range2);
-        range1.printDifference(range2);
+        double number = 4.5;
+        System.out.printf("Принадлежность числа %.1f к диапазону %s - %b", number, range, range.isInside(number));
     }
 }
