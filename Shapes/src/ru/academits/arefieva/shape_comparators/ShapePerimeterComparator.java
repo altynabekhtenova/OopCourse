@@ -1,4 +1,4 @@
-package ru.academits.arefieva.comparators_shapes;
+package ru.academits.arefieva.shape_comparators;
 
 import ru.academits.arefieva.shapes.Shape;
 

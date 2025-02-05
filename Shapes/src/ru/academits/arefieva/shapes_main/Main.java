@@ -1,22 +1,22 @@
 package ru.academits.arefieva.shapes_main;
 
-import ru.academits.arefieva.comparators_shapes.ShapeAreaComparator;
-import ru.academits.arefieva.comparators_shapes.ShapePerimeterComparator;
+import ru.academits.arefieva.shape_comparators.ShapeAreaComparator;
+import ru.academits.arefieva.shape_comparators.ShapePerimeterComparator;
 import ru.academits.arefieva.shapes.*;
 
 import java.util.Arrays;
 
 public class Main {
     public static Shape getMaxAreaShape(Shape[] shapes) {
-        Arrays.sort(shapes, new ShapeAreaComparator().reversed());
+        Arrays.sort(shapes, new ShapeAreaComparator());
 
-        return shapes[0];
+        return shapes[shapes.length - 1];
     }
 
     public static Shape getSecondMaxPerimeterShape(Shape[] shapes) {
-        Arrays.sort(shapes, new ShapePerimeterComparator().reversed());
+        Arrays.sort(shapes, new ShapePerimeterComparator());
 
-        return shapes[1];
+        return shapes[shapes.length - 2];
     }
 
     public static void main(String[] args) {
@@ -31,13 +31,9 @@ public class Main {
                 new Circle(5)
         };
 
-        System.out.printf("Фигура с максимальной площадью - %s c шириной %.1f и высотой %.1f%n",
-                getMaxAreaShape(shapes),
-                getMaxAreaShape(shapes).getWidth(),
-                getMaxAreaShape(shapes).getHeight());
-        System.out.printf("Фигура со вторым по величине периметром - %s c шириной %.1f и высотой %.1f%n",
-                getSecondMaxPerimeterShape(shapes),
-                getSecondMaxPerimeterShape(shapes).getWidth(),
-                getSecondMaxPerimeterShape(shapes).getHeight());
+        System.out.printf("Фигура с максимальной площадью - %s%n",
+                getMaxAreaShape(shapes));
+        System.out.printf("Фигура со вторым по величине периметром - %s",
+                getSecondMaxPerimeterShape(shapes));
     }
 }
