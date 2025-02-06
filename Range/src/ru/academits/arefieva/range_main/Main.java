@@ -8,13 +8,13 @@ public class Main {
     public static void main(String[] args) {
         Range range1 = new Range(-10, 19);
 
-        double[] startPoint = {-4, 5, 6, -9, 9, 10};
-        double[] endPoint = {10, 11, 12, 13, 20, 22};
+        double[] startPoints = {-4, 5, 6, -9, 9, 10};
+        double[] endPoints = {10, 11, 12, 13, 20, 22};
 
-        Range range2 = new Range(startPoint[0], endPoint[0]);
+        Range range2 = new Range(startPoints[0], endPoints[0]);
 
-        for (double secondRangeFrom : startPoint) {
-            for (double secondRangeTo : endPoint) {
+        for (double secondRangeFrom : startPoints) {
+            for (double secondRangeTo : endPoints) {
                 range2.setFrom(secondRangeFrom);
                 range2.setTo(secondRangeTo);
 
