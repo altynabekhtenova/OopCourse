@@ -31,9 +31,7 @@ public class Main {
                 new Circle(5)
         };
 
-        System.out.printf("Фигура с максимальной площадью - %s%n",
-                getMaxAreaShape(shapes));
-        System.out.printf("Фигура со вторым по величине периметром - %s",
-                getSecondMaxPerimeterShape(shapes));
+        System.out.printf("Фигура с максимальной площадью - %s%n", getMaxAreaShape(shapes));
+        System.out.printf("Фигура со вторым по величине периметром - %s", getSecondMaxPerimeterShape(shapes));
     }
 }
