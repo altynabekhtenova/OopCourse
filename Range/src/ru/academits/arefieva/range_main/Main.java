@@ -8,13 +8,13 @@ public class Main {
     public static void main(String[] args) {
         Range range1 = new Range(-10, 19);
 
-        double[] fromPoints = {-4, 5, 6, -9, 9, 10};
-        double[] toPoints = {10, 11, 12, 13, 20, 22};
+        double[] fromSet = {-4, 5, 6, -9, 9, 10};
+        double[] toSet = {10, 11, 12, 13, 20, 22};
 
-        Range range2 = new Range(fromPoints[0], toPoints[0]);
+        Range range2 = new Range(fromSet[0], toSet[0]);
 
-        for (double range2From : fromPoints) {
-            for (double range2To : toPoints) {
+        for (double range2From : fromSet) {
+            for (double range2To : toSet) {
                 range2.setFrom(range2From);
                 range2.setTo(range2To);
 
