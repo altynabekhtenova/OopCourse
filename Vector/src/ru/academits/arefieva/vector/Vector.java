@@ -5,14 +5,6 @@ import java.util.Arrays;
 public class Vector {
     private double[] components;
 
-    public double[] getComponents() {
-        return components;
-    }
-
-    public void setComponents(double[] components) {
-        this.components = components;
-    }
-
     public Vector(int size) {
         if (size <= 0) {
             throw new IllegalArgumentException("Size (" + size + ") of vector must be > 0");
@@ -46,17 +38,21 @@ public class Vector {
     }
 
     public void add(Vector vector) {
-        int maxVectorLength = Math.max(components.length, vector.components.length);
+        if (vector.components.length > components.length) {
+            components = Arrays.copyOf(components, vector.components.length);
+        }
 
-        for (int i = 0; i < maxVectorLength; i++) {
+        for (int i = 0; i < vector.components.length; i++) {
             components[i] += vector.components[i];
         }
     }
 
     public void subtract(Vector vector) {
-        int minVectorLength = Math.max(components.length, vector.components.length);
+        if (vector.components.length > components.length) {
+            components = Arrays.copyOf(components, vector.components.length);
+        }
 
-        for (int i = 0; i < minVectorLength; i++) {
+        for (int i = 0; i < vector.components.length; i++) {
             components[i] -= vector.components[i];
         }
     }
@@ -71,46 +67,46 @@ public class Vector {
         multiplyByScalar(-1);
     }
 
-    public int getVectorLength() {
-        double componentsSum = 0;
+    public double getLength() {
+        double componentsSquaresSum = 0;
 
         for (double component : components) {
-            componentsSum += Math.pow(component, 2);
+            componentsSquaresSum += component * component;
         }
 
-        return (int) Math.sqrt(componentsSum);
+        return Math.sqrt(componentsSquaresSum);
     }
 
     public double getComponentByIndex(int index) {
         return components[index];
     }
 
-    public void setComponentByIndex(double component, int index) {
+    public void setComponentByIndex(int index, double component) {
         components[index] = component;
     }
 
     public static Vector getSum(Vector vector1, Vector vector2) {
-        Vector vectorResult = new Vector(vector1);
+        Vector resultingVector = new Vector(vector1);
 
-        vectorResult.add(vector2);
+        resultingVector.add(vector2);
 
-        return vectorResult;
+        return resultingVector;
     }
 
     public static Vector getDifference(Vector vector1, Vector vector2) {
-        Vector vectorResult = new Vector(vector1);
+        Vector resultingVector = new Vector(vector1);
 
-        vectorResult.subtract(vector2);
+        resultingVector.subtract(vector2);
 
-        return vectorResult;
+        return resultingVector;
     }
 
-    public static double getScalarMultiplication(Vector vector1, Vector vector2) {
+    public static double getScalarProduct(Vector vector1, Vector vector2) {
         double result = 0;
-        int minLength = Math.min(vector1.components.length, vector2.components.length);
+        int minSize = Math.min(vector1.components.length, vector2.components.length);
 
-        for (int i = 0; i < minLength; i++) {
-            result = vector1.components[i] * vector2.components[i];
+        for (int i = 0; i < minSize; i++) {
+            result += vector1.components[i] * vector2.components[i];
         }
 
         return result;
@@ -118,7 +114,17 @@ public class Vector {
 
     @Override
     public String toString() {
-        return Arrays.toString(components);
+        StringBuilder vectorInBraces = new StringBuilder();
+
+        vectorInBraces.append("{");
+
+        for (int i = 0; i < components.length - 1; i++) {
+            vectorInBraces.append(components[i]).append(", ");
+        }
+
+        vectorInBraces.append(components[components.length - 1]).append("}");
+
+        return vectorInBraces.toString();
     }
 
     @Override
