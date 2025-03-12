@@ -86,24 +86,25 @@ public class Vector {
     }
 
     public static Vector getSum(Vector vector1, Vector vector2) {
-        Vector resultingVector = new Vector(vector1);
+        Vector resultVector = new Vector(vector1);
 
-        resultingVector.add(vector2);
+        resultVector.add(vector2);
 
-        return resultingVector;
+        return resultVector;
     }
 
     public static Vector getDifference(Vector vector1, Vector vector2) {
-        Vector resultingVector = new Vector(vector1);
+        Vector resultVector = new Vector(vector1);
 
-        resultingVector.subtract(vector2);
+        resultVector.subtract(vector2);
 
-        return resultingVector;
+        return resultVector;
     }
 
     public static double getScalarProduct(Vector vector1, Vector vector2) {
-        double result = 0;
         int minSize = Math.min(vector1.components.length, vector2.components.length);
+
+        double result = 0;
 
         for (int i = 0; i < minSize; i++) {
             result += vector1.components[i] * vector2.components[i];
@@ -114,17 +115,13 @@ public class Vector {
 
     @Override
     public String toString() {
-        StringBuilder vectorInBraces = new StringBuilder();
-
-        vectorInBraces.append("{");
+        StringBuilder stringBuilder = new StringBuilder();
 
         for (int i = 0; i < components.length - 1; i++) {
-            vectorInBraces.append(components[i]).append(", ");
+            stringBuilder.append(components[i]).append(", ");
         }
 
-        vectorInBraces.append(components[components.length - 1]).append("}");
-
-        return vectorInBraces.toString();
+        return "{" + stringBuilder + components[components.length - 1] + "}";
     }
 
     @Override
